@@ -15,6 +15,7 @@ public class Text {
 	private String writer;
 	private String title;
 	private String contents;
+	private String modifiedDate;
 	private String modifiedTime;
 	private int viewNumber;
 }

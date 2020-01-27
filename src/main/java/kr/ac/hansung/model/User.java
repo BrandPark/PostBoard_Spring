@@ -14,4 +14,5 @@ public class User {
 	private String userId;
 	private String userPassword;
 	private String userEmail;
+	private int enabled;
 }
