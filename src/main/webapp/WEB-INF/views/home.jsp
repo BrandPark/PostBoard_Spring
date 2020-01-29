@@ -11,5 +11,17 @@
 </h1>
 
 <P> <a href="${pageContext.request.contextPath}/postList">게시글 목록</a> </P>
+
+	<c:if test="${pageContext.request.userPrincipal.name != null}">
+<!-- 		<a href="document.getElementById('logout').submit()">Logout</a> -->
+
+
+		<form id="logout" action="<c:url value="/logout"/>" method="post">
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token }" />
+			<input type="submit" value="logout"/>
+		</form>
+	</c:if>
+
 </body>
 </html>

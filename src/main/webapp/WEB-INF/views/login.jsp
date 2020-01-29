@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,17 +28,23 @@
 			action="${pageContext.request.contextPath}/login">
 			<h2 class="form-signin-heading">Login</h2>
 			<p>
-				<label for="username" class="sr-only">Username</label> 
-				<input type="text" id="username" name="user_id" class="form-control"
+				<c:if test="${errorMsg =='login_error'}">
+					<c:out value="${errorMsg}" />
+				</c:if>
+				<label for="username" class="sr-only">Username</label> <input
+					type="text" id="username" name="user_id" class="form-control"
 					placeholder="Username" required autofocus>
 			</p>
 			<p>
-				<label for="password" class="sr-only">Password</label> 
-				<input type="password" id="password" name="user_password" class="form-control"
-					placeholder="Password" required>
+				<label for="password" class="sr-only">Password</label> <input
+					type="password" id="password" name="user_password"
+					class="form-control" placeholder="Password" required>
+				<c:if test="${logoutMsg == 'logout_success'}">
+					<c:out value="${logoutMsg}" />
+				</c:if>
 			</p>
-			<input name="_csrf" type="hidden"
-				value="${_csrf.token}" />
+
+			<input name="_csrf" type="hidden" value="${_csrf.token}" />
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
 				in</button>
 		</form>
