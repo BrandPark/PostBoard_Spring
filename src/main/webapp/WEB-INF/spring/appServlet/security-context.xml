@@ -21,6 +21,8 @@
 		<intercept-url pattern="/writePost" access="isAuthenticated()" />
 		<intercept-url pattern="/login" access="permitAll" />
 		<intercept-url pattern="/logout" access="permitAll" />
+		<intercept-url pattern="/join" access="permitAll" />
+		<intercept-url pattern="/doJoin" access="permitAll" />
 		<intercept-url pattern="/**" access="denyAll" />
 		
 		<form-login authentication-failure-url="/login?error"
